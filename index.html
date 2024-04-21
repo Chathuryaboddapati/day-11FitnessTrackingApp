@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<title> Fitness Tracker</title> 
+    <link rel="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEX77OUAAAD/8On87uUbGBj06ODEurT/8+z/8+rc0MsdGhtWUlBpZWKbkZCZko3/7+gLBwf37uYsKSfWy8Tm1tG1raX96+f16uaknJh3cXD/9/D/7+vMwLs3NDbt4N6Oh4O6rquKgYFJRkMtKyw+OjkQFxoaHBlpYmJRTk+Ffnrh1s0iICKupqBhW1h8enmgmZEDBgAJvEWqAAAC9UlEQVR4nO3cW1fiMBSGYZpSExCJyFgQnAqI42E8/f9fNxQRW1BZK02aTH2fG+3NJh8tXWnYodUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAt7TQgRRxIlajh+EvKeJqReSqiFa2BmWTyO67URQtzmWFItN0fL0qcn0yEtYGZosatqM3vZHxWdTZYlNkmQUWMdWdaOvJdHB6dLMt8ierdLU7sPxIGI0NL1R5UShyO7E7wIrUeVRkVqR4Hax0grpO5V1pcDOje6G8KhW5r3LLsi45LQ/OLOGiVGQR0jnUD6WxRT2VmlQ5KxU5sz7MCnY+QdGx0dufdEtF2klAd9OGJtRyIiaT9STNZcL8NSay/qlq2lKdi7/R6fFsKlwmTNXl7U10c3tp9MmuRD5uBvKUuEyonjdHz3VPxtXRdiS9ibuE6mV7+FJzRPH7YygdLRwljLPCcb0T1dJJu1KuzqGaFY7NJkqmxFHhpXvuEvYLx2OPCaWrhPKkcNxvYkJFQndISMJPBZMwnyD6S1jD9DRWymNCpZzPbESn1xfeEop+b+h2cWOg85niXHhKKOarv5ke2I5VJPKHpjNv5zBfyXl0exLXM8XXZHogoRQGWocSpsl7UpcJ89c8TdT3CZdHRtqlIvsJ4/WiZRAJrSAhCUlIQhKSkIQkJCEJSXgg4eJ/frbw+3z46j5h45/xB7HXdRo5j/LvEZ2u07TEsNlrbSu66eulb5q9qp8jIQk/RUISWvXTejGa2E/T/J6oUl/b0Flfm/bX11ZTb2Isx9vDunsT6+ovld76S9c9wqsR3c2msbuEaeqxR3jb573+13mft++9Fw3t1S/4AQn39swYDC7e3TMz8PDR+1JSXghs3r6nvb1rRoPb2bs2D2rvmpiVBmdWJOj9h83fQ9qKC++/2Z00L1LYB9wNbh+wtLOX+/1SWGbhbcm3sh8/DXg/ft5aO+hY+k2FOLwTuNHw38UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIxz9zN0xvNLF8BwAAAABJRU5ErkJggg==" href="icon_path" type="image/icon type">
+	<!-- Font Awesome CSS CDN -->
+	<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			integrity= "sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <title>Fitness-App</title>
+    <link rel="icon"href="https://tse1.mm.bing.net/th?id=OIP.NX0qHnLZsIyauBpsm9QXPQHaFl&pid=Api&P=0&h=180"type="image/x-icon"/>
+	<link rel="stylesheet" href="style.css"> 
+</head> 
+
+<body> 
+	<div class="app"> 
+		<h1>Fitness Tracker</h1> 
+		<div class="inputs"> 
+			<div> 
+				<label for="workoutType"> 
+					Workout Type
+				</label> 
+				<input id="workoutType" type="text" required> 
+			</div> 
+			<div> 
+				<label for="caloriesBurned"> 
+					Calories Burned 
+				</label> 
+				<input id="caloriesBurned" type="number" required> 
+			</div> 
+			<div> 
+				<label for="stepsTaken"> 
+					Steps Taken 
+				</label> 
+				<input id="stepsTaken" type="number"> 
+			</div> 
+		</div> 
+		<button id="submit">Submit</button> 
+		<div id="editSection" class="hidden"> 
+			<button id="cancelEdit" onclick="cancelEdit()"> 
+				Cancel 
+			</button> 
+			<button id="updateEntry" onclick="editRow()"> 
+				Update 
+			</button> 
+		</div> 
+		<table> 
+			<thead> 
+				<tr> 
+					<th>Date</th> 
+					<th>Workout Type</th> 
+					<th>Calories Burned</th> 
+					<th>Steps Taken</th> 
+					<th>Edit</th> 
+					<th>Delete</th> 
+				</tr> 
+			</thead> 
+			<tbody id="output"> 
+			</tbody> 
+		</table> 
+	</div> 
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+			integrity= "sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"> 
+	</script> 
+	<script src="script.js"></script> 
+  <footer >
+    <centre><h1 style="margin-left:6%">DID YOU DO YOUR WORKOUT TODAY?</h1></centre>
+  </footer>
+</body> 
+</html>
